@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e4e4e3;
+}
+header {
+  background-color: #bf9d7c;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+section {
+  text-align: center;
+  padding: 20px;
+}
+#div1 {
+  margin-bottom: 2%;
+}
+footer {
+  background-color: #909a9d;
+  color: #fff;
+  padding: 20px;
+}
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer-content i {
+  margin: 0 8px;
+}
+.footer-content p {
+  margin-bottom: 0;
+}
+/* Estilos para el nav y enlaces de ul y li */
+nav {
+  background-color: #ac855f;
+  padding: 10px;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+nav ul li a:hover {
+  background-color: #688497;
+  font-weight: bold;
+}
+nav img {
+  border: 0px;
+}
+
+/* Estilos para las imágenes */
+img {
+  display: block; /* Para eliminar el espacio adicional que algunos navegadores agregan a las img. */
+  margin: 0 auto; /* Centrar las imágenes horizontalmente */
+  max-width: 100%;
+  border: 3px solid #909a9d;
+  border-radius: 10px;
+}
+.card img {
+  border: 0px;
+}
+.card {
+  margin: 0.5% 2%;
+}
