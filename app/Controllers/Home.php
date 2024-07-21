@@ -6,7 +6,8 @@ class Home extends BaseController
 {
     public function index()
     {
-        echo view('front/head_view');
+        $data['titulo'] = 'Pagina principal';
+        echo view('front/head_view', $data);
         echo view('front/navbar_view');
         echo view('front/principal_ultimo');
         echo view('front/footer_view.php');
@@ -14,7 +15,8 @@ class Home extends BaseController
 
     public function quienes_somos()
     {
-        echo view('front/head_view');
+        $data['titulo'] = 'Quienes somos';
+        echo view('front/head_view', $data);
         echo view('front/navbar_view');
         echo view('front/quienes_somos');
         echo view('front/footer_view.php');
@@ -22,25 +24,46 @@ class Home extends BaseController
 
     public function registro()
     {
-        echo view('front/head_view');
+        $data['titulo'] = 'Registro';
+        echo view('front/head_view', $data);
         echo view('front/navbar_view');
-        echo view('front/registro');
+        echo view('back/usuario/registro');
         echo view('front/footer_view.php');
     }
 
     public function login()
     {
-        echo view('front/head_view');
+        $data['titulo'] = 'Login';
+        echo view('front/head_view', $data);
         echo view('front/navbar_view');
-        echo view('front/login');
+        echo view('back/usuario/login');
         echo view('front/footer_view.php');
     }
 
     public function acerca_de()
     {
-        echo view('front/head_view');
+        $data['titulo'] = 'Acerca de';
+        echo view('front/head_view', $data);
         echo view('front/navbar_view');
         echo view('front/acerca_de');
+        echo view('front/footer_view.php');
+    }
+
+    public function catalogo()
+    {
+        $data['titulo'] = 'Catalogo';
+        echo view('front/head_view', $data);
+        echo view('front/navbar_view');
+        echo view('front/catalogo');
+        echo view('front/footer_view.php');
+    }
+
+    public function usuario_lista()
+    {
+        $data['titulo'] = 'Usuarios registrados';
+        echo view('front/head_view', $data);
+        echo view('front/navbar_view');
+        echo view('back/usuario/usuario_lista.php');
         echo view('front/footer_view.php');
     }
 }
