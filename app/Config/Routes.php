@@ -1,7 +1,7 @@
 <?php
 
 use CodeIgniter\Router\RouteCollection;
-
+// routes php para llamar a los metodos mediante urls
 /**
  * @var RouteCollection $routes
  */
@@ -17,6 +17,9 @@ $routes->get('catalogo', 'Home::catalogo');
 $routes->get('registro','usuario_controller::create');
 $routes->post('/enviar-form','usuario_controller::formValidation');
 $routes->get('/usuario_lista', 'usuario_controller::list');
+$routes->get('/usuario_editar/(:num)', 'usuario_controller::edit/$1');
+$routes->post('/edicion', 'usuario_controller::update');
+$routes->get('/usuario_eliminar', 'usuario_controller::formValidation');
 
 /*rutas del login*/
 $routes->get('login', 'login_controller');

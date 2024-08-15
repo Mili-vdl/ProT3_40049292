@@ -12,6 +12,7 @@
 
 <body>
     <header>
-        <img src="assets\img\carpincho.jpeg" class="img-fluid rounded" alt="carpincho sosteniendo un reloj">
+        <img src="<?php echo base_url('assets/img/carpincho.jpeg'); ?>" class="img-fluid rounded"
+            alt="carpincho sosteniendo un reloj">
         <h1>Bienvenidos a nuestra web</h1>
     </header>

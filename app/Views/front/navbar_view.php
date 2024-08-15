@@ -3,35 +3,40 @@
 $session = session();
 $nombre = $session->get('nombre');
 $perfil = $session->get('perfil_id');
+$id = $session->get('id_usuario');
 ?>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="principal">
-            <img src="assets/img/logo_reloj.png" alt="logo reloj" width="30" height="30">
+            <img src="<?php echo base_url('assets/img/logo_reloj.png'); ?>" alt="logo reloj" width="30" height="30">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Sección visible solo para administradores -->
+        <!-- visualizar nombre de admin o usuario -->
         <?php if($perfil == 1): ?>
         <div class="d-inline-flex align-items-center p-2 bg-secondary text-white rounded mx-1">
-            <a href="#" class="text-white text-decoration-none">ADMIN: <?php echo $nombre; ?></a>
+            <a href="#" class="text-white text-decoration-none">ADMIN: <?php echo strtoupper($nombre); ?></a>
+        </div>
+        <?php elseif($perfil==2): ?>
+        <div class="d-inline-flex align-items-center p-2 bg-secondary text-white rounded mx-1">
+            <a href="#" class="text-white text-decoration-none">USER: <?php echo strtoupper($nombre); ?></a>
         </div>
         <?php endif; ?>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="principal">Home</a>
+                    <a class="nav-link active" aria-current="page" href="<?php echo base_url('principal'); ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="quienes_somos">Quiénes somos</a>
+                    <a class="nav-link" href="<?php echo base_url('quienes_somos'); ?>">Quiénes somos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="acercade">Acerca de</a>
+                    <a class="nav-link" href="<?php echo base_url('acercade'); ?>">Acerca de</a>
                 </li>
 
                 <?php if($perfil == 1): ?>
@@ -49,7 +54,10 @@ $perfil = $session->get('perfil_id');
                 <!-- Opciones específicas para usuarios logueados -->
                 <?php if($perfil == 2): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="catalogo">Catálogo</a>
+                    <a class="nav-link" href="<?php echo base_url('catalogo'); ?>">Catálogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo base_url('usuario_editar/'.$id); ?>">Edita tus datos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('/logout'); ?>" tabindex="-1"
@@ -58,10 +66,10 @@ $perfil = $session->get('perfil_id');
                 <!-- Opciones para usuarios no logueados -->
                 <?php elseif(!$perfil): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="registro">Registrarse</a>
+                    <a class="nav-link" href="<?php echo base_url('registro'); ?>">Registrarse</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login">Login</a>
+                    <a class="nav-link" href="<?php echo base_url('/login'); ?>">Login</a>
                 </li>
                 <?php endif; ?>
 

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+// class home para mostrar las vistas
 class Home extends BaseController
 {
     public function index()
@@ -58,12 +58,4 @@ class Home extends BaseController
         echo view('front/footer_view.php');
     }
 
-    public function usuario_lista()
-    {
-        $data['titulo'] = 'Usuarios registrados';
-        echo view('front/head_view', $data);
-        echo view('front/navbar_view');
-        echo view('back/usuario/usuario_lista.php');
-        echo view('front/footer_view.php');
-    }
 }
